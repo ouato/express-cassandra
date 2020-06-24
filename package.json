@@ -1,5 +1,5 @@
 {
-  "name": "express-cassandra",
+  "name": "@ouato/express-cassandra",
   "version": "2.3.2",
   "dependencies": {
     "JSONStream": "^1.3.1",
