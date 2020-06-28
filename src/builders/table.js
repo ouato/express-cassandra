@@ -1,3 +1,9 @@
+/**
+ * 
+ * TODO DEBUG to REMOVE
+ **/
+const console = require('console');
+
 const _ = require('lodash');
 const async = require('async');
 const util = require('util');
@@ -33,6 +39,10 @@ TableBuilder.prototype = {
     const keyspaceName = properties.keyspace;
     const tableName = properties.table_name;
     const dbSchema = { fields: {}, typeMaps: {}, staticMaps: {} };
+    
+    // TODO TO REMOVE DEBUG
+    console.log('----------------------- Thats it!: ' + tableName + ' / ' + keyspaceName);
+
     const query = 'SELECT * FROM system_schema.columns WHERE table_name = ? AND keyspace_name = ?;';
 
     this._driver.execute_query(query, [tableName, keyspaceName], (err, resultColumns) => {

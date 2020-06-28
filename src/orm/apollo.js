@@ -184,6 +184,8 @@ Apollo.prototype = {
       const ormReplication = normalizer.normalize_replication_option(options.defaultReplicationStrategy);
 
       if (!_.isEqual(dbReplication, ormReplication)) {
+        console.log('/////// dbReplication:' + JSON.stringify(dbReplication, null, 4) + '\n./////// orm: ' 
+          + JSON.stringify(ormReplication, null, 4));
         keyspaceBuilder.alter_keyspace(keyspaceName, options.defaultReplicationStrategy, callback);
         return;
       }
