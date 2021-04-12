@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.3.4]
+
+Upgrade to Cassandra driver ^4.6.2 for Astra connectivity switch
+
+## [2.3.3]
+
+Upgrade of Cassandra driver version to enable connexion to Astra Cloud
+
 ## [2.3.2] - 2019-09-20
 
 ### Fixed
