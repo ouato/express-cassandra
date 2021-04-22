@@ -51,12 +51,16 @@ const Apollo = function f(connection, options) {
 
   options = options || {};
 
+  /** REMOVED FOR CASSANDRA CLOUD */
+  // TODO: Check for "cloud" client option before unapplying the default strategy
+  /*
   if (!options.defaultReplicationStrategy) {
     options.defaultReplicationStrategy = {
       class: 'SimpleStrategy',
       replication_factor: DEFAULT_REPLICATION_FACTOR,
     };
   }
+  */
 
   this._options = options;
   this._models = {};
