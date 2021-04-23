@@ -6,15 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-<<<<<<< HEAD
-## [2.3.4]
+## [2.6.1] - 2021-04-16 / ouato
 
-Upgrade to Cassandra driver ^4.6.2 for Astra connectivity switch
+### Fixed
+- Solved 'Schema queries require keyspace_name column' error when querying system_schema.views
 
-## [2.3.3]
-
-Upgrade of Cassandra driver version to enable connexion to Astra Cloud
-=======
 ## [2.6.0] - 2021-04-16
 
 ### Changed
@@ -41,7 +37,6 @@ Upgrade of Cassandra driver version to enable connexion to Astra Cloud
 
 ### Security
 - Upgraded package dependencies to resolve vulnerability in a dependent package
->>>>>>> 58c3becca47373a60614cf4b77bd25e56bfd554b
 
 ## [2.3.2] - 2019-09-20
 
