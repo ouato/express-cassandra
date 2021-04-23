@@ -2,7 +2,7 @@
   "name": "@ouato/express-cassandra",
   "version": "2.6.1",
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^3.2.0",
     "babel-polyfill": "^6.26.0",
     "bluebird": "^3.4.6",
     "cassandra-driver": "^4.6.2",
