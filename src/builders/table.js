@@ -352,9 +352,13 @@ TableBuilder.prototype = {
     const keyspaceName = properties.keyspace;
     const tableName = properties.table_name;
     const dbSchema = {};
+<<<<<<< HEAD
     let query = 'SELECT view_name,base_table_name,where_clause,keyspace_name FROM system_schema.views WHERE keyspace_name=? AND base_table_name=? ALLOW FILTERING;';
+=======
+    let query = 'SELECT view_name,base_table_name,where_clause FROM system_schema.views WHERE keyspace_name=?;';
+>>>>>>> 58c3becca47373a60614cf4b77bd25e56bfd554b
 
-    this._driver.execute_query(query, [keyspaceName, tableName], (err, resultViews) => {
+    this._driver.execute_query(query, [keyspaceName], (err, resultViews) => {
       if (err) {
         callback(buildError('model.tablecreation.dbschemaquery', err));
         return;
@@ -363,7 +367,7 @@ TableBuilder.prototype = {
       for (let r = 0; r < resultViews.rows.length; r++) {
         const row = resultViews.rows[r];
 
-        if (row.view_name) {
+        if (row.view_name && row.base_table_name === tableName) {
           if (!dbSchema.materialized_views) dbSchema.materialized_views = {};
           dbSchema.materialized_views[row.view_name] = {
             where_clause: row.where_clause,

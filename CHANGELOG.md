@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ## [2.3.4]
 
 Upgrade to Cassandra driver ^4.6.2 for Astra connectivity switch
@@ -13,6 +14,34 @@ Upgrade to Cassandra driver ^4.6.2 for Astra connectivity switch
 ## [2.3.3]
 
 Upgrade of Cassandra driver version to enable connexion to Astra Cloud
+=======
+## [2.6.0] - 2021-04-16
+
+### Changed
+- Upgrade cassandra-driver from 3.3 to 4.6 - [driver upgrade guide](https://docs.datastax.com/en/developer/nodejs-driver/4.6/upgrade-guide/)
+
+### Fixed
+- Allow filtering error in cloud cassandra deployments
+
+## [2.5.0] - 2020-10-08
+
+### Added
+- Added support for per partition limit operator
+
+### Security
+- Upgraded package dependencies to resolve vulnerability in a dependent package
+
+## [2.4.0] - 2020-07-27
+
+### Changed
+- Allow additional control in janusgraph configuration
+
+### Fixed
+- Unset primary key error thrown for non primary keys when key is a substring of the primary key
+
+### Security
+- Upgraded package dependencies to resolve vulnerability in a dependent package
+>>>>>>> 58c3becca47373a60614cf4b77bd25e56bfd554b
 
 ## [2.3.2] - 2019-09-20
 
@@ -526,7 +555,10 @@ save function callback instead of raising exceptions
 - Support for schema validators
 - Support for auto loading of model schema from directory
 
-[Unreleased]: https://github.com/masumsoft/express-cassandra/compare/v2.3.2...master
+[Unreleased]: https://github.com/masumsoft/express-cassandra/compare/v2.6.0...master
+[2.6.0]: https://github.com/masumsoft/express-cassandra/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/masumsoft/express-cassandra/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/masumsoft/express-cassandra/compare/v2.3.2...v2.4.0
 [2.3.2]: https://github.com/masumsoft/express-cassandra/compare/v2.3.1...v2.3.2
 [2.3.1]: https://github.com/masumsoft/express-cassandra/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/masumsoft/express-cassandra/compare/v2.2.4...v2.3.0

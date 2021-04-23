@@ -31,6 +31,7 @@ models.setDirectory( __dirname + '/models').bind(
     {
         clientOptions: {
             contactPoints: ['127.0.0.1'],
+            localDataCenter: 'dc1',
             protocolOptions: { port: 9042 },
             keyspace: 'mykeyspace',
             queryOptions: {consistency: models.consistencies.one}
@@ -63,6 +64,7 @@ var ExpressCassandra = require('express-cassandra');
 var models = ExpressCassandra.createClient({
     clientOptions: {
         contactPoints: ['127.0.0.1'],
+        localDataCenter: 'dc1',
         protocolOptions: { port: 9042 },
         keyspace: 'mykeyspace',
         queryOptions: {consistency: ExpressCassandra.consistencies.one}
@@ -103,7 +105,7 @@ MyModel.syncDB(function(err, result) {
 
 > clientOptions
 
-Any of the `clientOptions` supported by the cassandra nodejs driver can be used. Possible options are documented in the [cassandra driver docs](http://docs.datastax.com/en/developer/nodejs-driver/3.3/api/type.ClientOptions/).
+Any of the `clientOptions` supported by the cassandra nodejs driver can be used. Possible options are documented in the [cassandra driver docs](http://docs.datastax.com/en/developer/nodejs-driver/4.6/api/type.ClientOptions/).
 
 
 > ormOptions
@@ -179,6 +181,7 @@ For connecting to cassandra using authentication, you can use the nodejs-driver 
 ```js
 clientOptions: {
     contactPoints: ['127.0.0.1'],
+    localDataCenter: 'dc1',
     protocolOptions: { port: 9042 },
     keyspace: 'mykeyspace',
     queryOptions: {consistency: models.consistencies.one},
@@ -186,7 +189,7 @@ clientOptions: {
 }
 ```
 
-If you are using datastax enterprise then please use the auth provider `DsePlainTextAuthProvider` from dse-driver instead.
+If you are using datastax enterprise then please use the auth provider `DsePlainTextAuthProvider` from cassandra-driver instead.
 
 ## Let's Insert Some Data into PersonModel
 

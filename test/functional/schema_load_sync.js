@@ -8,6 +8,7 @@ let client;
 const config = {
   clientOptions: {
     contactPoints: ['127.0.0.1'],
+    localDataCenter: 'dc1',
     keyspace: 'express_cassandra_tests_kspc1',
     queryOptions: { consistency: models.consistencies.one },
   },
@@ -171,6 +172,7 @@ module.exports = () => {
       client = models.createClient({
         clientOptions: {
           contactPoints: ['127.0.0.1'],
+          localDataCenter: 'dc1',
           keyspace: 'express_cassandra_tests_kspc1',
           queryOptions: { consistency: models.consistencies.one },
         },
@@ -200,17 +202,31 @@ module.exports = () => {
     });
 
     it('should load a schema from an object and syncDB', (done) => {
-      const myTempModel = client.loadSchema('tempSchema', {
+      const myTempModel = client.loadSchema('TempSchema', {
         fields: {
-          email: 'text',
+          firstname: 'text',
           name: 'text',
         },
-        key: ['email'],
+        key: ['firstname'],
       });
-      myTempModel.should.equal(client.instance.tempSchema);
+      myTempModel.should.equal(client.instance.TempSchema);
       myTempModel.syncDB((err) => {
-        if (err) done(err);
-        else done();
+        if (err) {
+          done(err);
+          return;
+        }
+        done();
+      });
+    });
+
+    it('should insert into custom schema without error', (done) => {
+      const tempItem = new client.instance.TempSchema({ firstname: 'John' });
+      tempItem.save((err) => {
+        if (err) {
+          done(err);
+          return;
+        }
+        done();
       });
     });
   });
