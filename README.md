@@ -5,6 +5,14 @@
 [![Dependencies Status](https://david-dm.org/masumsoft/express-cassandra/status.svg)](https://david-dm.org/masumsoft/express-cassandra)
 [![Mentioned in Awesome Cassandra](https://awesome.re/mentioned-badge.svg)](https://anant.github.io/awesome-cassandra/)
 
+# Important Notice
+
+This repository was forked from @ifaim/express-cassandra, that I'm using as a dependency
+grabbed by the NestJS framework that I'm using. I strongly suggest you to use the
+mamusoft dependency that is really maintained on the contrary to than this one.
+
+Ouato
+
 # Overview
 
 Express-Cassandra is a Cassandra ORM/ODM/OGM for NodeJS with Elassandra & JanusGraph Support.

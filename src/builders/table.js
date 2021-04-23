@@ -352,7 +352,7 @@ TableBuilder.prototype = {
     const keyspaceName = properties.keyspace;
     const tableName = properties.table_name;
     const dbSchema = {};
-    let query = 'SELECT view_name,base_table_name,where_clause FROM system_schema.views WHERE keyspace_name=? AND base_table_name=? ALLOW FILTERING;';
+    let query = 'SELECT view_name,base_table_name,where_clause,keyspace_name FROM system_schema.views WHERE keyspace_name=? AND base_table_name=? ALLOW FILTERING;';
 
     this._driver.execute_query(query, [keyspaceName, tableName], (err, resultViews) => {
       if (err) {
