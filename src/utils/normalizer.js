@@ -24,10 +24,6 @@ const normalizer = {
         normalizedReplicationOptions[key] = normalizedReplicationOptions[key].replace('org.apache.cassandra.locator.', '');
         return;
       }
-/**       if(key === 'caas-dc') {
-        normalizedReplicationOptions['caas_dc'] = normalizedReplicationOptions[key];
-        delete normalizedReplicationOptions['caas-dc'];
-      } **/
       normalizedReplicationOptions[key] = parseInt(normalizedReplicationOptions[key], 10);
     });
     return normalizedReplicationOptions;
