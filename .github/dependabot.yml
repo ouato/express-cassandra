@@ -1,0 +1,23 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: y18n
+    versions:
+    - 3.2.2
+  - dependency-name: mixin-deep
+    versions:
+    - 1.3.2
+  - dependency-name: cassandra-driver
+    versions:
+    - 4.6.2
+  - dependency-name: ini
+    versions:
+    - 1.3.8
+  - dependency-name: eslint-config-airbnb-base
+    versions:
+    - 13.1.0
