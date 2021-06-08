@@ -32,7 +32,7 @@
     "eslint-plugin-import": "^2.8.0",
     "gremlin": "^2.6.0",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^9.0.0",
     "mocha-logger": "1.0.5",
     "mocha-silent-reporter": "^1.0.0",
     "nyc": "^11.2.1",
